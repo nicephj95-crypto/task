@@ -5,7 +5,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## React Compiler
 
@@ -71,3 +71,47 @@ export default defineConfig([
   },
 ])
 ```
+
+## Pushing this project to your GitHub account
+
+The repository currently lives on the `work` branch. To publish it to your own GitHub repository:
+
+1. Create an empty repository on GitHub (do **not** initialize with a README or license).
+2. Point this local repo to the new remote:
+   ```bash
+   git remote add origin https://github.com/<your-username>/<your-repo>.git
+   ```
+3. Push the current branch:
+   ```bash
+   git push -u origin work
+   ```
+4. For future updates, commit your changes locally and push them:
+   ```bash
+   git add .
+   git commit -m "feat: describe your change"
+   git push
+   ```
+
+### GitHub로 푸시하기 (한국어 안내)
+
+위 절차를 한국어로 정리했습니다. 로컬에서 `work` 브랜치를 그대로 올릴 수 있어요. 필요하면 루트의 [`PUSH_KR.md`](./PUSH_KR.md)에 있는 빠른 명령어 모음도 참고하세요.
+
+1. GitHub에서 **빈 저장소**를 하나 만들고, README나 라이선스는 추가하지 않습니다.
+2. 지금 작업 중인 로컬 저장소에 새 원격을 등록합니다.
+   ```bash
+   git remote add origin https://github.com/<사용자명>/<저장소명>.git
+   ```
+3. 현재 `work` 브랜치를 원격에 최초로 올립니다.
+   ```bash
+   git push -u origin work
+   ```
+4. 이후에는 변경사항을 커밋한 뒤 평소처럼 푸시하면 됩니다.
+   ```bash
+   git add .
+   git commit -m "feat: 변경 내용을 적어주세요"
+   git push
+   ```
+5. 원격이 제대로 연결됐는지 확인하고 싶다면 다음 명령으로 목록을 확인할 수 있습니다.
+   ```bash
+   git remote -v
+   ```
