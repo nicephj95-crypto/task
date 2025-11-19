@@ -1,27 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { appContainer } from './App.css'
+import BoardList from './components/BoardList/BoardList'
+import ListsContainer from './components/ListsContainer/ListsContainer'
+import TaskModal from './components/TaskModal/TaskModal'
+import LoggerModal from './components/LoggerModal/LoggerModal'
+import { appContainer, boardArea, contentArea } from './App.css'
 
 function App() {
-
-
   return (
-   <div className={appContainer}>
-    <div className={board}>
-
+    <div className={appContainer}>
+      <aside className={boardArea}>
+        <BoardList />
+      </aside>
+      <main className={contentArea}>
+        <ListsContainer />
+      </main>
+      <TaskModal />
+      <LoggerModal />
     </div>
-
-    <div className={buttons}>
-      <button>
-        이 게시판 삭제하기
-      </button>
-      <button>
-        
-      </button>
-    </div>
-   </div>
   )
 }
 

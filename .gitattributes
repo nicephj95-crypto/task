@@ -1,0 +1,10 @@
+# Prefer this branch's implementations for frequently-colliding app entry files
+README.md merge=ours
+src/App.tsx merge=ours
+src/components/ActionButton/ActionButton.ts merge=ours
+src/components/ActionButton/ActionButton.tsx merge=ours
+src/components/ActionButton/DropDownForm/DropDownForm.tsx merge=ours
+src/components/BoardList/BoardList.tsx merge=ours
+src/components/List/List.tsx merge=ours
+src/components/ListsContainer/ListsContainer.tsx merge=ours
+src/components/Task/Task.tsx merge=ours
