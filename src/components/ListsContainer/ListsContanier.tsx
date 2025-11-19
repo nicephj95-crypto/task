@@ -1,11 +1,3 @@
-import React from 'react'
+import ListsContainer from './ListsContainer'
 
-const ListsContanier = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default ListsContanier
+export default ListsContainer

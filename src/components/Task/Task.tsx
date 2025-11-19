@@ -1,10 +1,26 @@
-import React from 'react'
+import { ITask } from '@/types'
+import { useAppDispatch } from '@/hooks/redux'
+import { openModal } from '@/store/slices/modalSlice'
+import { card, title, description } from './Task.css'
 
-const Task = () => {
+type TaskProps = {
+  task: ITask
+  boardId: string
+  listId: string
+}
+
+const Task = ({ task, boardId, listId }: TaskProps) => {
+  const dispatch = useAppDispatch()
+
+  const handleOpenModal = () => {
+    dispatch(openModal({ boardId, listId, task }))
+  }
+
   return (
-    <div>
-      
-    </div>
+    <button type="button" className={card} onClick={handleOpenModal}>
+      <div className={title}>{task.taskName}</div>
+      {task.taskDescription && <div className={description}>{task.taskDescription}</div>}
+    </button>
   )
 }
 

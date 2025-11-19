@@ -9,100 +9,92 @@ export const backdrop = style({
   alignItems: 'center',
   justifyContent: 'center',
   padding: vars.spacing.xlarge,
-  zIndex: 999,
+  zIndex: 1000,
 })
 
 export const modal = style({
   backgroundColor: vars.colors.surface,
-  borderRadius: '18px',
-  width: 'min(720px, 100%)',
-  maxHeight: '80vh',
+  color: vars.colors.primaryText,
+  borderRadius: '16px',
+  width: 'min(560px, 100%)',
   padding: vars.spacing.xlarge,
   boxShadow: vars.shadow.deep,
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing.big2,
+  gap: vars.spacing.medium,
 })
 
 export const header = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
-  gap: vars.spacing.big1,
+  gap: vars.spacing.small,
 })
 
-export const heading = style({
-  margin: 0,
-  fontSize: vars.fontSizing.T2,
-  color: vars.colors.primaryText,
+export const title = style({
+  fontSize: vars.fontSizing.T1,
+  fontWeight: 800,
+  lineHeight: 1.3,
 })
 
 export const subtitle = style({
-  margin: 0,
-  fontSize: vars.fontSizing.T6,
+  fontSize: vars.fontSizing.T5,
   color: vars.colors.secondaryDarkText,
 })
 
-export const headerActions = style({
+export const body = style({
+  fontSize: vars.fontSizing.T4,
+  lineHeight: 1.6,
+  color: vars.colors.secondaryDarkText,
+  whiteSpace: 'pre-line',
+})
+
+export const actions = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  marginTop: vars.spacing.big1,
+})
+
+export const actionGroup = style({
   display: 'flex',
   gap: vars.spacing.medium,
 })
 
-const baseButton = {
+export const closeButton = style({
+  border: 'none',
+  backgroundColor: vars.colors.primary,
+  color: vars.colors.inverseText,
   padding: `${vars.spacing.small} ${vars.spacing.medium}`,
   borderRadius: '10px',
-  fontWeight: 700,
   cursor: 'pointer',
+  fontWeight: 700,
   selectors: {
+    '&:hover': {
+      backgroundColor: vars.colors.primaryHover,
+    },
     '&:focus-visible': {
       outline: '3px solid rgba(0, 149, 255, 0.25)',
       outlineOffset: '2px',
     },
   },
-} as const
-
-export const closeButton = style({
-  ...baseButton,
-  border: 'none',
-  backgroundColor: vars.colors.primary,
-  color: vars.colors.inverseText,
-  selectors: {
-    ...baseButton.selectors,
-    '&:hover': {
-      backgroundColor: vars.colors.primaryHover,
-    },
-  },
 })
 
-export const clearButton = style({
-  ...baseButton,
+export const ghostButton = style({
   border: `1px solid ${vars.colors.mainFadedBright}`,
   backgroundColor: 'transparent',
   color: vars.colors.secondaryDarkText,
+  padding: `${vars.spacing.small} ${vars.spacing.medium}`,
+  borderRadius: '10px',
+  cursor: 'pointer',
+  fontWeight: 700,
   selectors: {
-    ...baseButton.selectors,
     '&:hover': {
       borderColor: vars.colors.main,
       color: vars.colors.mainDarker,
     },
-    '&:disabled': {
-      opacity: 0.5,
-      cursor: 'not-allowed',
+    '&:focus-visible': {
+      outline: '3px solid rgba(0, 149, 255, 0.25)',
+      outlineOffset: '2px',
     },
   },
-})
-
-export const body = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: vars.spacing.medium,
-  overflowY: 'auto',
-  maxHeight: '52vh',
-  paddingRight: vars.spacing.small,
-})
-
-export const empty = style({
-  margin: 0,
-  color: vars.colors.secondaryDarkText,
-  fontSize: vars.fontSizing.T4,
 })
